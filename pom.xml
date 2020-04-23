@@ -8,6 +8,12 @@
     <artifactId>CucumberWebOrdersFall2019</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>12</maven.compiler.source>
+        <maven.compiler.target>12</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <!--
 1.    Maven compiler plugin
 2.    CUCUMBER JUNIT Dep
@@ -29,6 +35,53 @@
                 <source>12</source>
                 <target>12</target>
             </configuration>
+        </plugin>
+
+        <plugin>
+            <!-- this plugin used to run project tests which allows us to configure xml suites   -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.2</version>
+            <configuration>
+                <!--  here we specify tests attributes (parallel, threadCount, etc)
+                        so when we execute to run project  it will be run according this attributes
+                                -->
+                <parallel>methods</parallel>
+                <threadCount>2</threadCount>
+                <perCoreThreadCount>false</perCoreThreadCount>
+                <forkCount>2C</forkCount>
+
+
+                <includes>
+                    <!-- list all runner class here-->
+                    <include>**/*CucumberRunner.java</include>
+                </includes>
+                <testFailureIgnore>true</testFailureIgnore>
+
+            </configuration>
+        </plugin>
+
+        <plugin>
+            <groupId>net.masterthought</groupId>
+            <artifactId>maven-cucumber-reporting</artifactId>
+            <version>4.5.0</version>
+            <executions>
+                <execution>
+                    <id>execution</id>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>generate</goal>
+                    </goals>
+                    <configuration>
+                        <projectName>Cucumber HTML Reports</projectName>
+                        <outputDirectory>${project.build.directory}</outputDirectory>
+                        <inputDirectory>${project.build.directory}</inputDirectory>
+                        <jsonFiles>
+                            <param>**/cucumber*.json</param>
+                        </jsonFiles>
+                    </configuration>
+                </execution>
+            </executions>
         </plugin>
 
     </plugins>
