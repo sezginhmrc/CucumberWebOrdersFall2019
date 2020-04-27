@@ -22,7 +22,7 @@ Feature: Add order
 
     And User enter payment information
       | Card | Card Nr:  | Expire date (mm/yy) |
-      | Visa | 123456789 | 04/25               |
+      | Visa | 123456789 | 04/27               |
 
     And user click on process button
     Then system should displayed "New order has been successfully added."
