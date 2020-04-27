@@ -5,6 +5,8 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 
+// this runner class allows us to kick off cucumber test
+// by providing paths though cucumber options
 
 
 @RunWith(Cucumber.class)
@@ -12,9 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/weborders/step_definitions",
         dryRun = false,
-
-        tags = "@Create_Order",
-
+        tags = "@Smoke_Test",
         plugin = {"html:target/default-report",
                 "json:target/cucumber1.json"
         }

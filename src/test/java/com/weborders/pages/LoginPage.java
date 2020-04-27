@@ -22,5 +22,4 @@ public class LoginPage extends BasePage
        password.sendKeys(passwordData, Keys.ENTER);
 
     }
-
 }

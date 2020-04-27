@@ -65,6 +65,97 @@ public class CreateOrderPage extends BasePage{
         select.selectByValue(value);
     }
 
+    @FindBy (id = "ctl00_MainContent_fmwOrder_txtName")
+    protected WebElement customerName ;
+
+    @FindBy (id = "ctl00_MainContent_fmwOrder_TextBox2")
+    protected WebElement street ;
+
+    @FindBy (id = "ctl00_MainContent_fmwOrder_TextBox3")
+    protected  WebElement city ;
+
+    @FindBy(id = "ctl00_MainContent_fmwOrder_TextBox4")
+    protected  WebElement state ;
+
+    @FindBy(id = "ctl00_MainContent_fmwOrder_TextBox5")
+    protected WebElement zipcode ;
+
+
+    public void enterCustomerName(String value){
+        BrowserUtilities.waitForPageToLoad(15);
+        wait.until(ExpectedConditions.visibilityOf(customerName)).sendKeys(value);
+        BrowserUtilities.wait(2);
+    }
+    public void enterStreet (String value){
+        BrowserUtilities.waitForPageToLoad(15);
+        wait.until(ExpectedConditions.visibilityOf(street)).sendKeys(value);
+        BrowserUtilities.wait(2);
+    }
+    public void enterCity(String value){
+        BrowserUtilities.waitForPageToLoad(15);
+        wait.until(ExpectedConditions.visibilityOf(city)).sendKeys(value);
+        BrowserUtilities.wait(2);
+    }
+    public void enterState(String value){
+        BrowserUtilities.waitForPageToLoad(15);
+        wait.until(ExpectedConditions.visibilityOf(state)).sendKeys(value);
+        BrowserUtilities.wait(2);
+    }
+    public void enterZip(String value){
+        BrowserUtilities.waitForPageToLoad(15);
+        wait.until(ExpectedConditions.visibilityOf(zipcode)).sendKeys(value);
+        BrowserUtilities.wait(4);
+    }
+
+
+    @FindBy(id = "ctl00_MainContent_fmwOrder_cardList_0")
+    protected WebElement card ;
+
+    @FindBy (id = "ctl00_MainContent_fmwOrder_TextBox6")
+    protected WebElement cardNumber ;
+
+    @FindBy (id = "ctl00_MainContent_fmwOrder_TextBox1")
+    protected WebElement expireDate ;
+
+
+    public void selectCardType(String value){
+        BrowserUtilities.wait(2);
+        if(value.equalsIgnoreCase("visa")){
+            wait.until(ExpectedConditions.visibilityOf(card)).click();
+        }else {
+            System.out.println("Invalid data type");
+        }
+    }
+    public void enterCardNumber(String value) {
+        BrowserUtilities.wait(2);
+        wait.until(ExpectedConditions.visibilityOf(cardNumber)).sendKeys(value);
+        BrowserUtilities.wait(2);
+    }
+    public void enterExpireDate(String value) {
+
+        wait.until(ExpectedConditions.visibilityOf(expireDate)).sendKeys(value);
+        BrowserUtilities.wait(2);
+    }
+
+    @FindBy(id = "ctl00_MainContent_fmwOrder_InsertButton")
+    protected WebElement processButton ;
+
+    public void clickProcessButton(){
+        BrowserUtilities.wait(1);
+        processButton.click();
+        BrowserUtilities.wait(2);
+
+    }
+
+    @FindBy (tagName = "strong")
+    protected  WebElement displayMessage ;
+
+    public String displayedMessage(){
+        BrowserUtilities.wait(2);
+        return displayMessage.getText();
+    }
+
+
 
 }
 
