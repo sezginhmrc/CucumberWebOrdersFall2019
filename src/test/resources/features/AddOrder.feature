@@ -32,11 +32,11 @@ Feature: Add order
       | Test User     |
       | ScreenSaver   |
       | 12            |
-      | 04/23/2020    |
+      | 05/01/2020    |
       | 5th Ave       |
       | New York City |
       | New York      |
       | 10011         |
       | Visa          |
       | 123456789     |
-      | 04/25         |
+      | 04/27         |

@@ -22,4 +22,9 @@ public class LoginPage extends BasePage
        password.sendKeys(passwordData, Keys.ENTER);
 
     }
+
+    public void login(String value, String value2){
+        username.sendKeys(value);
+        password.sendKeys(value2,Keys.ENTER);
+    }
 }

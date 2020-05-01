@@ -26,8 +26,6 @@ protected WebDriverWait wait ;
     }
 
 
-
-
     // after every scenario
     @After
     public void tearDown(Scenario scenario){

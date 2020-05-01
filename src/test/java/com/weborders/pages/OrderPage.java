@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-public class CreateOrderPage extends BasePage{
+public class OrderPage extends BasePage{
 
 
     @FindBy (id = "ctl00_MainContent_fmwOrder_txtQuantity")
@@ -60,10 +60,10 @@ public class CreateOrderPage extends BasePage{
     }
     public  void selectProduct(String value){
         BrowserUtilities.waitForPageToLoad(3);
-        System.out.println("Product type :: " +value);
         Select select = new Select(driver.findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct")));
         select.selectByValue(value);
     }
+
 
     @FindBy (id = "ctl00_MainContent_fmwOrder_txtName")
     protected WebElement customerName ;
@@ -80,6 +80,10 @@ public class CreateOrderPage extends BasePage{
     @FindBy(id = "ctl00_MainContent_fmwOrder_TextBox5")
     protected WebElement zipcode ;
 
+
+    public void enterAdressInformation(String name, String street, String city, String state, String zip){
+    // work on this method to come up with less code.
+    }
 
     public void enterCustomerName(String value){
         BrowserUtilities.waitForPageToLoad(15);

@@ -8,20 +8,13 @@
     <artifactId>CucumberWebOrdersFall2019</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!--
-1.    Maven compiler plugin
-2.    CUCUMBER JUNIT Dep
-3.    Cucumber Java Dep
-4.    Selenium Dep
-5.    SLF4J-api Dep
-6.    SLF4J-simple Dep
-7.    Io.github.bonigaricia       -->
 
 <build>
 
@@ -90,12 +83,15 @@
 
     <dependencies>
 
+        <!-- Cucumber io.cucumber-->
+
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>5.6.0</version>
         </dependency>
 
+        <!-- Cucumber Junit  -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
@@ -109,6 +105,7 @@
             <version>3.8.1</version>
         </dependency>
 
+        <!-- Selenium Java 3.141.59 -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -116,7 +113,7 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api
-        it a logger it prints information through output
+        it is a logger prints information through output
          if you use maven it is required by ide -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -124,6 +121,7 @@
             <version>1.7.30</version>
         </dependency>
 
+        <!--  Define Loggers send all eanble log message into console (output)    -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
